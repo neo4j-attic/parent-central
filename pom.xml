@@ -39,6 +39,12 @@
     <url>http://neo4j.org/</url>
   </organization>
 
+  <scm>
+    <connection>scm:git:git://github.com/neo4j/parent-central.git</connection>
+    <developerConnection>scm:git:git@github.com:neo4j/parent-central.git</developerConnection>
+    <url>https://github.com/neo4j/parent-central</url>
+  </scm>
+
   <mailingLists>
     <mailingList>
       <name>General Neo4j</name>
