@@ -654,50 +654,6 @@
 
   <profiles>
     <profile>
-      <id>do-not-attach-tests-jar</id>
-      <activation>
-        <activeByDefault>false</activeByDefault>
-        <file>
-          <missing>src/test</missing>
-        </file>
-      </activation>
-      <build>
-        <plugins>
-          <plugin>
-            <artifactId>maven-jar-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>attach-test-jar</id>
-                <phase>none</phase>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-    <profile>
-      <id>do-not-attach-docs-jar</id>
-      <activation>
-        <activeByDefault>false</activeByDefault>
-        <file>
-          <missing>src/docs</missing>
-        </file>
-      </activation>
-      <build>
-        <plugins>
-          <plugin>
-            <artifactId>maven-jar-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>attach-docs</id>
-                <phase>none</phase>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-    <profile>
       <id>neodev</id>
       <activation>
         <activeByDefault>false</activeByDefault>
