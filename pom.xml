@@ -438,7 +438,6 @@
         <artifactId>maven-release-plugin</artifactId>
         <configuration>
           <tag>${releaseVersion}</tag>
-          <tagBase>https://svn.neo4j.org/components/${short-name}/tags</tagBase>
         </configuration>
       </plugin>
       <plugin>
@@ -484,6 +483,14 @@
         <artifactId>maven-jar-plugin</artifactId>
         <executions>
           <execution>
+            <id>default-jar</id>
+            <configuration>
+              <archive>
+                <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+              </archive>
+            </configuration>
+          </execution>
+          <execution>
             <id>attach-test-jar</id>
             <goals>
               <goal>test-jar</goal>
@@ -500,11 +507,6 @@
             </configuration>
           </execution>
         </executions>
-        <configuration>
-          <archive>
-            <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
-          </archive>
-        </configuration>
       </plugin>
     </plugins>
   </build>
