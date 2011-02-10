@@ -14,7 +14,7 @@
   <url>http://components.neo4j.org/${project.artifactId}/${project.version}</url>
   <groupId>org.neo4j</groupId>
   <artifactId>parent-central</artifactId>
-  <version>18-SNAPSHOT</version>
+  <version>18</version>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
