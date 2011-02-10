@@ -3,7 +3,7 @@
   <parent>
     <groupId>org.sonatype.oss</groupId>
     <artifactId>oss-parent</artifactId>
-    <version>5</version>
+    <version>6</version>
   </parent>
   <name>The Neo4j Graph Database Project</name>
   <description>Neo4j is a graph database. It is an embedded, disk-based, fully
@@ -424,6 +424,15 @@
             <_include>-osgi.bnd</_include>
           </instructions>
         </configuration>
+        <executions>
+          <execution>
+            <id>bundle-manifest</id>
+            <phase>process-classes</phase>
+            <goals>
+              <goal>manifest</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
       <plugin>
         <artifactId>maven-release-plugin</artifactId>
@@ -491,6 +500,11 @@
             </configuration>
           </execution>
         </executions>
+        <configuration>
+          <archive>
+            <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+          </archive>
+        </configuration>
       </plugin>
     </plugins>
   </build>
@@ -504,7 +518,7 @@
         <inherited>true</inherited>
         <configuration>
           <quiet>true</quiet>
-          <detectLinks>true</detectLinks>
+          <detectLinks>false</detectLinks>
           <detectJavaApiLink>true</detectJavaApiLink>
           <tags>
             <tag>
