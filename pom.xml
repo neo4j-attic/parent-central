@@ -3,7 +3,7 @@
   <parent>
     <groupId>org.sonatype.oss</groupId>
     <artifactId>oss-parent</artifactId>
-    <version>6</version>
+    <version>7</version>
   </parent>
   <name>The Neo4j Graph Database Project</name>
   <description>Neo4j is a graph database. It is an embedded, disk-based, fully
@@ -21,8 +21,8 @@
     <ga-id>UA-1192232-15</ga-id>
     <skinGroupId>org.neo4j.maven.skins</skinGroupId>
     <skinArtifactId>default-skin</skinArtifactId>
-    <skinVersion>1.0.4</skinVersion>
-    <licensesVersion>4</licensesVersion>
+    <skinVersion>2-SNAPSHOT</skinVersion>
+    <licensesVersion>6</licensesVersion>
     <mavenJavadocPluginVersion>2.7</mavenJavadocPluginVersion>
     <mavenProjectInfoReportsPluginVersion>2.2</mavenProjectInfoReportsPluginVersion>
     <clirrMavenPluginVersion>2.2.2</clirrMavenPluginVersion>
@@ -284,7 +284,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-scm-plugin</artifactId>
-          <version>1.4</version>
+          <version>1.5</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
