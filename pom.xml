@@ -137,12 +137,19 @@
         <directory>src/main/resources</directory>
       </resource>
       <resource>
+        <directory>${basedir}/src/main/resources/META-INF/</directory>
+        <targetPath>META-INF</targetPath>
+      </resource>
+      <resource>
         <directory>${basedir}</directory>
         <targetPath>META-INF</targetPath>
         <includes>
+          <include>COPYRIGHT.txt</include>
           <include>NOTICE.txt</include>
           <include>LICENSE.txt</include>
-          <include>COPYRIGHT.txt</include>
+          <include>LICENSES.txt</include>
+          <include>README*</include>
+          <include>CHANGES.txt</include>
         </includes>
       </resource>
     </resources>
@@ -154,9 +161,12 @@
         <directory>${basedir}</directory>
         <targetPath>META-INF</targetPath>
         <includes>
+          <include>COPYRIGHT.txt</include>
           <include>NOTICE.txt</include>
           <include>LICENSE.txt</include>
-          <include>COPYRIGHT.txt</include>
+          <include>LICENSES.txt</include>
+          <include>README*</include>
+          <include>CHANGES.txt</include>
         </includes>
       </testResource>
     </testResources>
