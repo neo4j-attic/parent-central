@@ -6,10 +6,7 @@
     <version>7</version>
   </parent>
   <name>The Neo4j Graph Database Project</name>
-  <description>Neo4j is a graph database. It is an embedded, disk-based, fully
-    transactional Java persistence engine that
-    stores data structured in graphs
-    rather than in tables.</description>
+  <description>Neo4j is a high-performance, NOSQL graph database with all the features of a mature and robust database. </description>
   <packaging>pom</packaging>
   <url>http://components.neo4j.org/${project.artifactId}/${project.version}</url>
   <groupId>org.neo4j</groupId>
@@ -18,6 +15,9 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <sun.tools.version>1.6</sun.tools.version>
+    <cuke4duke.version>0.4.4</cuke4duke.version>
+    <pico.version>2.11.2</pico.version>
     <ga-id>UA-1192232-15</ga-id>
     <skinGroupId>org.neo4j.maven.skins</skinGroupId>
     <skinArtifactId>default-skin</skinArtifactId>
@@ -47,23 +47,22 @@
 
   <mailingLists>
     <mailingList>
-      <name>General Neo4j</name>
+      <name>Neo4j Community Discussions</name>
       <subscribe>user-request@lists.neo4j.org?subject=subscribe</subscribe>
       <unsubscribe>user-request@lists.neo4j.org?subject=unsubscribe</unsubscribe>
       <post>user@lists.neo4j.org</post>
       <archive>http://lists.neo4j.org/pipermail/user/</archive>
       <otherArchives>
         <otherArchive>
-          http://www.mail-archive.com/user@lists.neo4j.org/info.html
+          http://neo4j.org/forums/
         </otherArchive>
       </otherArchives>
     </mailingList>
   </mailingLists>
 
   <issueManagement>
-    <system>Trac</system>
-    <url>https://trac.neo4j.org/query?status=assigned&amp;status=new&amp;status=reopened&amp;component=${project.artifactId}
-    </url>
+    <system>TenderApp</system>
+    <url>http://help.neo4j.org/</url>
   </issueManagement>
 
   <licenses>
@@ -75,62 +74,22 @@
 
   <developers>
     <developer>
-      <id>emil</id>
-      <name>Emil Eifrem</name>
-      <email>emil [at] neotechnology.com</email>
-      <timezone>+1</timezone>
-      <roles>
-        <role>Developer</role>
-      </roles>
-    </developer>
-    <developer>
-      <id>tobias</id>
-      <name>Tobias Ivarsson</name>
-      <email>tobias.ivarsson [at] neotechnology.com</email>
-      <timezone>+1</timezone>
-      <roles>
-        <role>Developer</role>
-      </roles>
-    </developer>
-    <developer>
-      <id>mattias</id>
-      <name>Mattias Persson</name>
-      <email>mattias [at] neotechnology.com</email>
-      <timezone>+1</timezone>
-      <roles>
-        <role>Developer</role>
-      </roles>
-    </developer>
-    <developer>
-      <id>johans</id>
-      <name>Johan Svensson</name>
-      <email>johan [at] neotechnology.com</email>
-      <timezone>+1</timezone>
-      <roles>
-        <role>Developer</role>
-      </roles>
-    </developer>
-    <developer>
-      <id>andersn</id>
-      <name>Anders Nawroth</name>
-      <email>anders [at] neotechnology.com</email>
-      <timezone>+1</timezone>
-      <roles>
-        <role>Developer</role>
-      </roles>
-    </developer>
-    <developer>
-      <id>akollegger</id>
-      <name>Andreas Kollegger</name>
-      <email>andreas.kollegger [at] neotechnology.com</email>
-      <timezone>+1</timezone>
-      <roles>
-        <role>Developer</role>
-      </roles>
+      <id>neo4j</id>
+      <name>The Neo4j Team</name>
+      <url>http://neo4j.org/</url>
+      <organization>Neo Technology</organization>
+      <organizationUrl>http://neotechnology.com/</organizationUrl>
     </developer>
   </developers>
 
   <build>
+    <extensions>
+      <extension>
+        <groupId>org.apache.maven.wagon</groupId>
+         <artifactId>wagon-ssh-external</artifactId>
+         <version>1.0</version>
+      </extension>
+    </extensions>
     <defaultGoal>compile</defaultGoal>
     <resources>
       <resource>
@@ -275,6 +234,11 @@
           <version>${mavenProjectInfoReportsPluginVersion}</version>
         </plugin>
         <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>properties-maven-plugin</artifactId>
+          <version>1.0-alpha-2</version>
+        </plugin>
+        <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-rar-plugin</artifactId>
           <version>2.2</version>
@@ -291,6 +255,11 @@
           <configuration>
             <encoding>${project.build.sourceEncoding}</encoding>
           </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.scala-tools</groupId>
+          <artifactId>maven-scala-plugin</artifactId>
+          <version>2.15.2</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -351,6 +320,11 @@
           <version>${clirrMavenPluginVersion}</version>
         </plugin>
         <plugin>
+          <groupId>cuke4duke</groupId>
+          <artifactId>cuke4duke-maven-plugin</artifactId>
+          <version>${cuke4duke.version}</version>
+        </plugin>
+        <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>exec-maven-plugin</artifactId>
           <version>1.2</version>
@@ -385,6 +359,113 @@
           <groupId>com.google.code.maven-svn-revision-number-plugin</groupId>
           <artifactId>maven-svn-revision-number-plugin</artifactId>
           <version>1.5</version>
+        </plugin>
+        <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+        <plugin>
+          <groupId>org.eclipse.m2e</groupId>
+          <artifactId>lifecycle-mapping</artifactId>
+          <version>1.0.0</version>
+          <configuration>
+            <lifecycleMappingMetadata>
+              <pluginExecutions>
+                <pluginExecution>
+                  <pluginExecutionFilter>
+                    <groupId>com.mycila.maven-license-plugin</groupId>
+                    <artifactId>maven-license-plugin</artifactId>
+                    <versionRange>[1.9.0,)</versionRange>
+                    <goals>
+                      <goal>check</goal>
+                      <goal>format</goal>
+                    </goals>
+                  </pluginExecutionFilter>
+                  <action>
+                    <execute />
+                  </action>
+                </pluginExecution>
+                <pluginExecution>
+                  <pluginExecutionFilter>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <versionRange>[2.1,)</versionRange>
+                    <goals>
+                      <goal>unpack-dependencies</goal>
+                      <goal>unpack</goal>
+                    </goals>
+                  </pluginExecutionFilter>
+                  <action>
+                    <ignore />
+                  </action>
+                </pluginExecution>
+                <pluginExecution>
+                  <pluginExecutionFilter>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <versionRange>[2.7,)</versionRange>
+                    <goals>
+                      <goal>javadoc</goal>
+                    </goals>
+                  </pluginExecutionFilter>
+                  <action>
+                    <ignore />
+                  </action>
+                </pluginExecution>
+                <pluginExecution>
+                  <pluginExecutionFilter>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jxr-plugin</artifactId>
+                    <versionRange>[2.2,)</versionRange>
+                    <goals>
+                      <goal>jxr</goal>
+                    </goals>
+                  </pluginExecutionFilter>
+                  <action>
+                    <ignore />
+                  </action>
+                </pluginExecution>
+                <pluginExecution>
+                  <pluginExecutionFilter>
+                    <groupId>org.scala-tools</groupId>
+                    <artifactId>maven-scala-plugin</artifactId>
+                    <versionRange>[2.15.2,)</versionRange>
+                    <goals>
+                      <goal>compile</goal>
+                      <goal>testCompile</goal>
+                    </goals>
+                  </pluginExecutionFilter>
+                  <action>
+                    <execute />
+                  </action>
+                </pluginExecution>
+                <pluginExecution>
+                  <pluginExecutionFilter>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-antrun-plugin</artifactId>
+                    <versionRange>[1.6,)</versionRange>
+                    <goals>
+                      <goal>run</goal>
+                    </goals>
+                  </pluginExecutionFilter>
+                  <action>
+                    <execute />
+                  </action>
+                </pluginExecution>
+                <pluginExecution>
+                  <pluginExecutionFilter>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>build-helper-maven-plugin</artifactId>
+                    <versionRange>[1.5,)</versionRange>
+                    <goals>
+                      <goal>add-test-source</goal>
+                      <goal>add-test-resource</goal>
+                    </goals>
+                  </pluginExecutionFilter>
+                  <action>
+                    <execute />
+                  </action>
+                </pluginExecution>
+              </pluginExecutions>
+            </lifecycleMappingMetadata>
+          </configuration>
         </plugin>
       </plugins>
     </pluginManagement>
@@ -628,6 +709,18 @@
         <artifactId>httpclient</artifactId>
         <version>4.0.1</version>
         <classifier>tests</classifier>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>cuke4duke</groupId>
+        <artifactId>cuke4duke</artifactId>
+        <version>${cuke4duke.version}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.picocontainer</groupId>
+        <artifactId>picocontainer</artifactId>
+        <version>${pico.version}</version>
         <scope>test</scope>
       </dependency>
       <!-- other -->
