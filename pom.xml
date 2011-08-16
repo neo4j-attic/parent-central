@@ -9,7 +9,7 @@
   <description>Neo4j is a high-performance, NOSQL graph database with all the features of a mature and robust database. </description>
   <packaging>pom</packaging>
   <url>http://components.neo4j.org/${project.artifactId}/${project.version}</url>
-  <groupId>org.neo4j</groupId>
+  <groupId>org.neo4j.build</groupId>
   <artifactId>parent-central</artifactId>
   <version>23-SNAPSHOT</version>
 
@@ -163,7 +163,8 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-dependency-plugin</artifactId>
-          <version>2.2</version>
+          <!-- 2.2 and 2.3 will break unpack in different ways -->
+          <version>2.1</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -385,6 +386,19 @@
                 <pluginExecution>
                   <pluginExecutionFilter>
                     <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-enforcer-plugin</artifactId>
+                    <versionRange>[1.0.0,)</versionRange>
+                    <goals>
+                      <goal>enforce</goal>
+                    </goals>
+                  </pluginExecutionFilter>
+                  <action>
+                    <ignore />
+                  </action>
+                </pluginExecution>
+                <pluginExecution>
+                  <pluginExecutionFilter>
+                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-dependency-plugin</artifactId>
                     <versionRange>[2.1,)</versionRange>
                     <goals>
@@ -433,7 +447,9 @@
                     </goals>
                   </pluginExecutionFilter>
                   <action>
-                    <execute />
+                    <configurator>
+                      <id>org.maven.ide.eclipse.scala</id>
+                    </configurator>
                   </action>
                 </pluginExecution>
                 <pluginExecution>
