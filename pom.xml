@@ -21,12 +21,8 @@
     <ga-id>UA-1192232-15</ga-id>
     <skinGroupId>org.neo4j.maven.skins</skinGroupId>
     <skinArtifactId>default-skin</skinArtifactId>
-    <skinVersion>2</skinVersion>
+    <skinVersion>3</skinVersion>
     <licensesVersion>6</licensesVersion>
-    <mavenJavadocPluginVersion>2.7</mavenJavadocPluginVersion>
-    <mavenProjectInfoReportsPluginVersion>2.2</mavenProjectInfoReportsPluginVersion>
-    <clirrMavenPluginVersion>2.2.2</clirrMavenPluginVersion>
-    <mavenJxrPluginVersion>2.2</mavenJxrPluginVersion>
     <jta.groupId>org.apache.geronimo.specs</jta.groupId>
     <jta.artifactId>geronimo-jta_1.1_spec</jta.artifactId>
     <jta.version>1.1.1</jta.version>
@@ -61,7 +57,6 @@
   </mailingLists>
 
   <issueManagement>
-    <system>TenderApp</system>
     <url>http://help.neo4j.org/</url>
   </issueManagement>
 
@@ -139,7 +134,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-assembly-plugin</artifactId>
-          <version>2.2</version>
+          <version>2.2.1</version>
           <configuration>
             <tarLongFileMode>gnu</tarLongFileMode>
             <attach>false</attach>
@@ -175,7 +170,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-ear-plugin</artifactId>
-          <version>2.4.2</version>
+          <version>2.6</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -190,7 +185,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-gpg-plugin</artifactId>
-          <version>1.1</version>
+          <version>1.4</version>
           <configuration>
             <keyname>Neo Technology Build Server</keyname>
             <useAgent>true</useAgent>
@@ -212,27 +207,22 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
-          <version>2.3.1</version>
+          <version>2.3.2</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-javadoc-plugin</artifactId>
-          <version>${mavenJavadocPluginVersion}</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-jxr-plugin</artifactId>
-          <version>${mavenJxrPluginVersion}</version>
+          <version>2.8</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-plugin-plugin</artifactId>
-          <version>2.6</version>
+          <version>2.8</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-project-info-reports-plugin</artifactId>
-          <version>${mavenProjectInfoReportsPluginVersion}</version>
+          <version>2.4</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
@@ -247,12 +237,12 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-release-plugin</artifactId>
-          <version>2.1</version>
+          <version>2.2.1</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-resources-plugin</artifactId>
-          <version>2.4.3</version>
+          <version>2.5</version>
           <configuration>
             <encoding>${project.build.sourceEncoding}</encoding>
           </configuration>
@@ -270,12 +260,12 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
-          <version>2.1.1</version>
+          <version>2.3</version>
           <dependencies>
             <dependency>
               <groupId>org.apache.maven.doxia</groupId>
               <artifactId>doxia-core</artifactId>
-              <version>1.1.3</version>
+              <version>1.2</version>
             </dependency>
             <dependency>
               <groupId>${skinGroupId}</groupId>
@@ -292,23 +282,23 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.6</version>
+          <version>2.9</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-war-plugin</artifactId>
-          <version>2.1</version>
+          <version>2.1.1</version>
         </plugin>
         <!-- org.codehaus.* -->
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>appassembler-maven-plugin</artifactId>
-          <version>1.0</version>
+          <version>1.1.1</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>build-helper-maven-plugin</artifactId>
-          <version>1.5</version>
+          <version>1.7</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
@@ -318,7 +308,7 @@
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>clirr-maven-plugin</artifactId>
-          <version>${clirrMavenPluginVersion}</version>
+          <version>2.3</version>
         </plugin>
         <plugin>
           <groupId>cuke4duke</groupId>
@@ -342,11 +332,6 @@
         </plugin>
         <!-- non org.apache.maven.plugins or org.codehaus.* -->
         <plugin>
-          <groupId>org.apache.felix</groupId>
-          <artifactId>maven-bundle-plugin</artifactId>
-          <version>2.1.0</version>
-        </plugin>
-        <plugin>
           <groupId>com.mycila.maven-license-plugin</groupId>
           <artifactId>maven-license-plugin</artifactId>
           <version>1.9.0</version>
@@ -354,12 +339,12 @@
         <plugin>
           <groupId>org.ops4j</groupId>
           <artifactId>maven-pax-plugin</artifactId>
-          <version>1.4</version>
+          <version>1.5</version>
         </plugin>
         <plugin>
           <groupId>com.google.code.maven-svn-revision-number-plugin</groupId>
           <artifactId>maven-svn-revision-number-plugin</artifactId>
-          <version>1.5</version>
+          <version>1.6</version>
         </plugin>
         <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
         <plugin>
@@ -425,23 +410,11 @@
                 </pluginExecution>
                 <pluginExecution>
                   <pluginExecutionFilter>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-jxr-plugin</artifactId>
-                    <versionRange>[2.2,)</versionRange>
-                    <goals>
-                      <goal>jxr</goal>
-                    </goals>
-                  </pluginExecutionFilter>
-                  <action>
-                    <ignore />
-                  </action>
-                </pluginExecution>
-                <pluginExecution>
-                  <pluginExecutionFilter>
                     <groupId>org.scala-tools</groupId>
                     <artifactId>maven-scala-plugin</artifactId>
                     <versionRange>[2.15.2,)</versionRange>
                     <goals>
+                      <goal>add-source</goal>
                       <goal>compile</goal>
                       <goal>testCompile</goal>
                     </goals>
@@ -517,32 +490,6 @@
         </executions>
       </plugin>
       <plugin>
-        <groupId>org.apache.felix</groupId>
-        <artifactId>maven-bundle-plugin</artifactId>
-        <extensions>true</extensions>
-        <configuration>
-          <instructions>
-            <Bundle-Version>${project.version}</Bundle-Version>
-            <Export-Package>!${bundle.namespace}.impl.*,${bundle.namespace}.*;version="${project.version}"
-            </Export-Package>
-            <Private-Package>${bundle.namespace}.impl.*
-            </Private-Package>
-            <!-- Allow each bundle to override these settings by creating a file named osgi.bnd in the same directory as
-              the component's pom.xml. See components/kernel/trunk/osgi.bnd for an example. -->
-            <_include>-osgi.bnd</_include>
-          </instructions>
-        </configuration>
-        <executions>
-          <execution>
-            <id>bundle-manifest</id>
-            <phase>process-classes</phase>
-            <goals>
-              <goal>manifest</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
         <artifactId>maven-release-plugin</artifactId>
         <configuration>
           <tag>${releaseVersion}</tag>
@@ -594,7 +541,12 @@
             <id>default-jar</id>
             <configuration>
               <archive>
-                <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+                <manifest>
+                 <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                </manifest>
+                <manifestEntries>
+                  <Url>${project.organization.url}</Url>
+                </manifestEntries>
               </archive>
             </configuration>
           </execution>
@@ -624,7 +576,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
-        <version>${mavenJavadocPluginVersion}</version>
+        <version>2.8</version>
         <inherited>true</inherited>
         <configuration>
           <quiet>true</quiet>
@@ -637,16 +589,6 @@
               <head>Complexity:</head>
             </tag>
           </tags>
-          <javaApiLinks>
-            <property>
-              <name>api_1.5</name>
-              <value>http://download.oracle.com/javase/1.5.0/docs/api/</value>
-            </property>
-            <property>
-              <name>api_1.6</name>
-              <value>http://download.oracle.com/javase/6/docs/api/</value>
-            </property>
-          </javaApiLinks>
           <excludePackageNames>*.impl.*</excludePackageNames>
         </configuration>
         <reportSets>
@@ -660,13 +602,8 @@
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jxr-plugin</artifactId>
-        <version>${mavenJxrPluginVersion}</version>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-project-info-reports-plugin</artifactId>
-        <version>${mavenProjectInfoReportsPluginVersion}</version>
+        <version>2.4</version>
         <configuration>
           <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
           <dependencyDetailsEnabled>false</dependencyDetailsEnabled>
@@ -676,7 +613,7 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>clirr-maven-plugin</artifactId>
-        <version>${clirrMavenPluginVersion}</version>
+        <version>2.3</version>
       </plugin>
     </plugins>
   </reporting>
@@ -693,13 +630,13 @@
       <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
-        <version>4.8.2</version>
+        <version>4.9</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>junit</groupId>
         <artifactId>junit-dep</artifactId>
-        <version>4.8.2</version>
+        <version>4.9</version>
         <scope>test</scope>
       </dependency>
       <dependency>
@@ -778,6 +715,17 @@
       <releases>
         <enabled>false</enabled>
       </releases>
+    </repository>
+    <repository>
+      <id>sonatype-nexus-snapshots</id>
+      <name>Sonatype Nexus Snapshots</name>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
     </repository>
   </repositories>
 
