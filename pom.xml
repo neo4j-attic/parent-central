@@ -164,7 +164,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-deploy-plugin</artifactId>
-          <!-- 2.5 won't work when using Appassembler. -->
+          <!-- 2.5 won't work when using Appassembler and mvn2. -->
           <version>2.4</version>
         </plugin>
         <plugin>
@@ -260,7 +260,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
-          <version>2.3</version>
+          <version>3.0</version>
           <dependencies>
             <dependency>
               <groupId>org.apache.maven.doxia</groupId>
