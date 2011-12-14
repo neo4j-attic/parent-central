@@ -46,15 +46,7 @@
   <mailingLists>
     <mailingList>
       <name>Neo4j Community Discussions</name>
-      <subscribe>user-request@lists.neo4j.org?subject=subscribe</subscribe>
-      <unsubscribe>user-request@lists.neo4j.org?subject=unsubscribe</unsubscribe>
-      <post>user@lists.neo4j.org</post>
-      <archive>http://lists.neo4j.org/pipermail/user/</archive>
-      <otherArchives>
-        <otherArchive>
-          http://neo4j.org/forums/
-        </otherArchive>
-      </otherArchives>
+      <subscribe>https://groups.google.com/forum/#!forum/neo4j</subscribe>
     </mailingList>
   </mailingLists>
 
