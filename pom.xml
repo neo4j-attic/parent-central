@@ -798,6 +798,7 @@
             <executions>
               <execution>
                 <id>attach-java-sources</id>
+                <phase>package</phase>
                 <goals>
                   <goal>jar-no-fork</goal>
                 </goals>
@@ -822,6 +823,7 @@
             <executions>
               <execution>
                 <id>attach-java-sources</id>
+                <phase>package</phase>
                 <goals>
                   <goal>jar-no-fork</goal>
                 </goals>
@@ -846,6 +848,7 @@
             <executions>
               <execution>
                 <id>attach-test-sources</id>
+                <phase>package</phase>
                 <goals>
                   <goal>test-jar-no-fork</goal>
                 </goals>
@@ -857,6 +860,7 @@
             <executions>
               <execution>
                 <id>attach-test-jar</id>
+                <phase>package</phase>
                 <goals>
                   <goal>test-jar</goal>
                 </goals>
@@ -899,7 +903,7 @@
             <artifactId>maven-source-plugin</artifactId>
             <executions>
               <execution>
-                <id>attach-source</id>
+                <id>attach-java-sources</id>
                 <phase>none</phase>
               </execution>
             </executions>
@@ -908,7 +912,7 @@
             <artifactId>maven-javadoc-plugin</artifactId>
             <executions>
               <execution>
-                <id>attach-javadocs</id>
+                <id>attach-javadoc</id>
                 <phase>none</phase>
               </execution>
             </executions>
