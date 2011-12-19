@@ -4,7 +4,7 @@
     <groupId>org.sonatype.oss</groupId>
     <artifactId>oss-parent</artifactId>
     <version>7</version>
-    <relativePath/>
+    <relativePath />
   </parent>
   <name>The Neo4j Graph Database Project</name>
   <description>Neo4j is a high-performance, NOSQL graph database with all the features of a mature and robust database. </description>
@@ -12,7 +12,7 @@
   <url>http://components.neo4j.org/${project.artifactId}/${project.version}</url>
   <groupId>org.neo4j.build</groupId>
   <artifactId>parent-central</artifactId>
-  <version>26-SNAPSHOT</version>
+  <version>26</version>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -460,7 +460,7 @@
                     </goals>
                   </pluginExecutionFilter>
                   <action>
-                    <ignore/>
+                    <ignore />
                   </action>
                 </pluginExecution>
               </pluginExecutions>
