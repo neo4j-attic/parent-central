@@ -524,6 +524,7 @@
         <configuration>
           <detectJavaApiLink>true</detectJavaApiLink>
           <detectLinks>true</detectLinks>
+          <detectOfflineLinks>false</detectOfflineLinks>
           <quiet>true</quiet>
           <excludePackageNames>*.impl.*</excludePackageNames>
         </configuration>
@@ -632,6 +633,7 @@
         <configuration>
           <quiet>true</quiet>
           <detectLinks>false</detectLinks>
+          <detectOfflineLinks>false</detectOfflineLinks>
           <detectJavaApiLink>true</detectJavaApiLink>
           <excludePackageNames>*.impl.*</excludePackageNames>
         </configuration>
